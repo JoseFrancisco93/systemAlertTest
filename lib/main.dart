@@ -107,6 +107,16 @@ class __pipButtonState extends State<_pipButton> {
     });
   }
 
+  final MethodChannel _channel = MethodChannel('plugin_name');
+
+  Future<void> showAlert(String message) async {
+    try {
+      await _channel.invokeMethod('showAlert', {'message': message});
+    } catch (e) {
+      print('Error: $e');
+    }
+  }
+
   Future<void> _requestPermissions() async {
     await SystemAlertWindow.requestPermissions(prefMode: prefMode);
   }
@@ -194,6 +204,14 @@ class __pipButtonState extends State<_pipButton> {
               color: !_isShowingWindow ? Colors.green : Colors.red,
               padding: const EdgeInsets.all(8.0),
               child: !_isShowingWindow ? Text("Show") : Text("Close "),
+            ),
+          ),
+          IconButton(
+            onPressed: () {
+              showAlert('Hola desde Flutter');
+            },
+            icon: Icon(
+              Icons.ac_unit,
             ),
           ),
           // Padding(
