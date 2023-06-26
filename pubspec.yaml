@@ -41,7 +41,7 @@ dependencies:
       url: https://github.com/JoseFrancisco93/SystemAlertWindow
       ref: test
 
-  ios_test:
+  plugin_name:
     git:
       url: https://github.com/JoseFrancisco93/ios_test.git
 
