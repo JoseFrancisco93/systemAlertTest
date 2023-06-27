@@ -181,8 +181,8 @@ packages:
     dependency: "direct main"
     description:
       path: "."
-      ref: test
-      resolved-ref: e0f6019468198d2133cb82f06d27ebe26785dd18
+      ref: ios_test
+      resolved-ref: "1c17e7e1756600f3dd45a5974085ca9a417cf0bf"
       url: "https://github.com/JoseFrancisco93/SystemAlertWindow"
     source: git
     version: "1.2.1"
