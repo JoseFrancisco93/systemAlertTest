@@ -40,10 +40,10 @@ dependencies:
     git:
       url: https://github.com/JoseFrancisco93/SystemAlertWindow
       ref: ios_test
-
-  plugin_name:
+  
+  system_window_overlay:
     git:
-      url: https://github.com/JoseFrancisco93/ios_test.git
+      url: https://github.com/JoseFrancisco93/system_window_overlay
 
 dev_dependencies:
   flutter_test:
