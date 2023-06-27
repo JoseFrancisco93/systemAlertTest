@@ -1,11 +1,9 @@
-import 'dart:io';
 import 'dart:isolate';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_application_1/isolated_manager.dart';
 import 'package:system_alert_window/system_alert_window.dart';
-import 'package:system_window_overlay/system_window_overlay.dart';
 
 void main() {
   runApp(const MyApp());
@@ -23,23 +21,6 @@ class MyApp extends StatelessWidget {
       ),
       home: const MyHomePage(),
     );
-  }
-}
-
-class SystemAlertWindowIOS {
-  static const MethodChannel _channel = MethodChannel('system_alert_window');
-
-  static Future<String> getPlatformVersion() async {
-    final String version = await _channel.invokeMethod('getPlatformVersion');
-    return version;
-  }
-
-  static Future<void> showSystemWindow(String userName) async {
-    await _channel.invokeMethod('showSystemWindow', {'userName': userName});
-  }
-
-  static Future<void> closeSystemWindow() async {
-    await _channel.invokeMethod('closeSystemWindow');
   }
 }
 
@@ -100,11 +81,9 @@ class __pipButtonState extends State<_pipButton> {
   @override
   void initState() {
     super.initState();
-    if (Platform.isAndroid) {
-      _initPlatformState();
-      _requestPermissions();
-      initOverlayView();
-    }
+    _initPlatformState();
+    _requestPermissions();
+    initOverlayView();
   }
 
   // Platform messages are asynchronous, so we initialize in an async method.
@@ -130,9 +109,17 @@ class __pipButtonState extends State<_pipButton> {
 
   final MethodChannel _channel = MethodChannel('plugin_name');
 
-  Future<void> showAlert(String message) async {
+  Future<void> showAlert(String userName) async {
     try {
-      await _channel.invokeMethod('showAlert', {'message': message});
+      await _channel.invokeMethod('showAlert', {'userName': userName});
+    } catch (e) {
+      print('Error: $e');
+    }
+  }
+
+  Future<void> removeAlert() async {
+    try {
+      await _channel.invokeMethod('closeAlert');
     } catch (e) {
       print('Error: $e');
     }
@@ -182,7 +169,7 @@ class __pipButtonState extends State<_pipButton> {
 
   Future<void> _showOverlayWindow() async {
     if (!_isShowingWindow) {
-      SystemAlertWindow.showSystemWindowVEs(
+      SystemAlertWindow.showSystemWindowCopy25(
           userName: 'Jose francisco vasquez',
           height: 82,
           width: 150,
@@ -227,26 +214,36 @@ class __pipButtonState extends State<_pipButton> {
               child: !_isShowingWindow ? Text("Show") : Text("Close "),
             ),
           ),
-          Row(
-            children: [
-              IconButton(
-                onPressed: () {
-                  SystemAlertWindowIOS.showSystemWindow('Jose');
-                },
-                icon: const Icon(
-                  Icons.add,
-                ),
-              ),
-              IconButton(
-                onPressed: () {
-                  SystemAlertWindowIOS.closeSystemWindow();
-                },
-                icon: const Icon(
-                  Icons.remove,
-                ),
-              ),
-            ],
+          IconButton(
+            onPressed: () {
+              showAlert('Jose Vasquez');
+            },
+            icon: Icon(
+              Icons.add,
+            ),
           ),
+          IconButton(
+            onPressed: () {
+              removeAlert();
+            },
+            icon: Icon(
+              Icons.remove,
+            ),
+          ),
+          // Padding(
+          //   padding: const EdgeInsets.symmetric(vertical: 8.0),
+          //   child: MaterialButton(
+          //     onPressed: () {
+          //       setState(() {
+          //         _isMicOn = !_isMicOn;
+          //       });
+          //     },
+          //     textColor: Colors.white,
+          //     color: !_isMicOn ? Colors.green : Colors.red,
+          //     padding: const EdgeInsets.all(8.0),
+          //     child: !_isMicOn ? Text("Encendido") : Text("Apagado"),
+          //   ),
+          // ),
         ],
       ),
     );

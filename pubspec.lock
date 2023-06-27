@@ -123,6 +123,15 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.8.2"
+  plugin_name:
+    dependency: "direct main"
+    description:
+      path: "."
+      ref: HEAD
+      resolved-ref: e6e67a42ffdbce158f02b356f0c3667e1222a419
+      url: "https://github.com/JoseFrancisco93/ios_test.git"
+    source: git
+    version: "0.0.1"
   plugin_platform_interface:
     dependency: transitive
     description:
@@ -172,20 +181,11 @@ packages:
     dependency: "direct main"
     description:
       path: "."
-      ref: ios_test
-      resolved-ref: c3339109f0781a94a90e99751620c2a90c8b7a84
+      ref: test
+      resolved-ref: "5dd1322c0b9df5c327727b6ed122aef0c9cc9838"
       url: "https://github.com/JoseFrancisco93/SystemAlertWindow"
     source: git
     version: "1.2.1"
-  system_window_overlay:
-    dependency: "direct main"
-    description:
-      path: "."
-      ref: HEAD
-      resolved-ref: "085db0894802b674946516d912213c7db19984d9"
-      url: "https://github.com/JoseFrancisco93/system_window_overlay"
-    source: git
-    version: "0.0.1"
   term_glyph:
     dependency: transitive
     description:
