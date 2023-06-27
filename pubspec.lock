@@ -182,7 +182,7 @@ packages:
     description:
       path: "."
       ref: ios_test
-      resolved-ref: "1c17e7e1756600f3dd45a5974085ca9a417cf0bf"
+      resolved-ref: "3bfaec3c058cc948975dc7ff2a3621ce34181fea"
       url: "https://github.com/JoseFrancisco93/SystemAlertWindow"
     source: git
     version: "1.2.1"

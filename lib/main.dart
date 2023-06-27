@@ -161,7 +161,7 @@ class __pipButtonState extends State<_pipButton> {
 
   Future<void> _showOverlayWindow() async {
     if (!_isShowingWindow) {
-      SystemAlertWindow.showSystemWindowCopy(
+      SystemAlertWindow.showSystemWindow(
           userName: 'Jose francisco vasquez',
           height: 82,
           width: 150,
