@@ -13,11 +13,11 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Plugin Example'),
+          title: Text('Video Call Overlay Plugin'),
         ),
         body: Center(
           child: ElevatedButton(
-            child: Text('Invoke Method'),
+            child: Text('Version OS'),
             onPressed: () {
               invokeMethod();
             },
