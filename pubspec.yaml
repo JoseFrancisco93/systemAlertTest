@@ -36,14 +36,17 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
 
-  system_alert_window:
-    git:
-      url: https://github.com/JoseFrancisco93/SystemAlertWindow
-      ref: test
+  # system_alert_window:
+  #   git:
+  #     url: https://github.com/JoseFrancisco93/SystemAlertWindow
+  #     ref: test
 
-  plugin_name:
-    git:
-      url: https://github.com/JoseFrancisco93/ios_test.git
+  # plugin_name:
+  #   git:
+  #     url: https://github.com/JoseFrancisco93/ios_test.git
+
+  video_call_overlay:
+    git: https://github.com/JoseFrancisco93/videoCallOverlay
 
 dev_dependencies:
   flutter_test:

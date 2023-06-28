@@ -123,15 +123,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.8.2"
-  plugin_name:
-    dependency: "direct main"
-    description:
-      path: "."
-      ref: HEAD
-      resolved-ref: e6e67a42ffdbce158f02b356f0c3667e1222a419
-      url: "https://github.com/JoseFrancisco93/ios_test.git"
-    source: git
-    version: "0.0.1"
   plugin_platform_interface:
     dependency: transitive
     description:
@@ -177,15 +168,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.2.0"
-  system_alert_window:
-    dependency: "direct main"
-    description:
-      path: "."
-      ref: test
-      resolved-ref: "5dd1322c0b9df5c327727b6ed122aef0c9cc9838"
-      url: "https://github.com/JoseFrancisco93/SystemAlertWindow"
-    source: git
-    version: "1.2.1"
   term_glyph:
     dependency: transitive
     description:
@@ -210,6 +192,15 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.1.4"
+  video_call_overlay:
+    dependency: "direct main"
+    description:
+      path: "."
+      ref: HEAD
+      resolved-ref: "9307a9c30ae9814c815f5d791a653b3275f1c2b8"
+      url: "https://github.com/JoseFrancisco93/videoCallOverlay"
+    source: git
+    version: "0.0.1"
 sdks:
   dart: ">=2.19.4 <3.0.0"
   flutter: ">=2.5.0"
