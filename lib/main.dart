@@ -25,22 +25,22 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class SystemAlertWindowIOS {
-  static const MethodChannel _channel = MethodChannel('system_alert_window');
+// class SystemAlertWindowIOS {
+//   static const MethodChannel _channel = MethodChannel('system_alert_window');
 
-  static Future<String> getPlatformVersion() async {
-    final String version = await _channel.invokeMethod('getPlatformVersion');
-    return version;
-  }
+//   static Future<String> getPlatformVersion() async {
+//     final String version = await _channel.invokeMethod('getPlatformVersion');
+//     return version;
+//   }
 
-  static Future<void> showSystemWindow(String userName) async {
-    await _channel.invokeMethod('showSystemWindow', {'userName': userName});
-  }
+//   static Future<void> showSystemWindow(String userName) async {
+//     await _channel.invokeMethod('showSystemWindow', {'userName': userName});
+//   }
 
-  static Future<void> closeSystemWindow() async {
-    await _channel.invokeMethod('closeSystemWindow');
-  }
-}
+//   static Future<void> closeSystemWindow() async {
+//     await _channel.invokeMethod('closeSystemWindow');
+//   }
+// }
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key});
@@ -230,7 +230,7 @@ class __pipButtonState extends State<_pipButton> {
             children: [
               IconButton(
                 onPressed: () {
-                  SystemAlertWindowIOS.showSystemWindow('Jose');
+                 // SystemAlertWindowIOS.showSystemWindow('Jose');
                 },
                 icon: const Icon(
                   Icons.add,
@@ -238,7 +238,7 @@ class __pipButtonState extends State<_pipButton> {
               ),
               IconButton(
                 onPressed: () {
-                  SystemAlertWindowIOS.closeSystemWindow();
+                 // SystemAlertWindowIOS.closeSystemWindow();
                 },
                 icon: const Icon(
                   Icons.remove,
