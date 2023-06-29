@@ -25,23 +25,6 @@ class MyApp extends StatelessWidget {
   }
 }
 
-// class SystemAlertWindowIOS {
-//   static const MethodChannel _channel = MethodChannel('system_alert_window');
-
-//   static Future<String> getPlatformVersion() async {
-//     final String version = await _channel.invokeMethod('getPlatformVersion');
-//     return version;
-//   }
-
-//   static Future<void> showSystemWindow(String userName) async {
-//     await _channel.invokeMethod('showSystemWindow', {'userName': userName});
-//   }
-
-//   static Future<void> closeSystemWindow() async {
-//     await _channel.invokeMethod('closeSystemWindow');
-//   }
-// }
-
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key});
 
@@ -108,11 +91,11 @@ class __pipButtonState extends State<_pipButton> {
 
   // Platform messages are asynchronous, so we initialize in an async method.
   Future<void> _initPlatformState() async {
-    await SystemAlertWindow.enableLogs(true);
+    await SystemAlertWindowAndroid.enableLogs(true);
     String platformVersion;
     // Platform messages may fail, so we use a try/catch PlatformException.
     try {
-      platformVersion = (await SystemAlertWindow.platformVersion)!;
+      platformVersion = (await SystemAlertWindowAndroid.platformVersion)!;
     } on PlatformException {
       platformVersion = 'Failed to get platform version.';
     }
@@ -138,11 +121,11 @@ class __pipButtonState extends State<_pipButton> {
   }
 
   Future<void> _requestPermissions() async {
-    await SystemAlertWindow.requestPermissions(prefMode: prefMode);
+    await SystemAlertWindowAndroid.requestPermissions(prefMode: prefMode);
   }
 
   Future<void> initOverlayView() async {
-    await SystemAlertWindow.requestPermissions;
+    await SystemAlertWindowAndroid.requestPermissions;
     ReceivePort _port = ReceivePort();
     IsolateManager.registerPortWithName(_port.sendPort);
     _port.listen((dynamic callBackData) {
@@ -156,7 +139,7 @@ class __pipButtonState extends State<_pipButton> {
       }
     });
 
-    SystemAlertWindow.registerOnClickListener(buttonPressCallback);
+    SystemAlertWindowAndroid.registerOnClickListener(buttonPressCallback);
   }
 
   SystemWindowBody body = SystemWindowBody(
@@ -181,7 +164,7 @@ class __pipButtonState extends State<_pipButton> {
 
   Future<void> _showOverlayWindow() async {
     if (!_isShowingWindow) {
-      SystemAlertWindow.showSystemWindowCopy25(
+      SystemAlertWindowAndroid.showSystemWindow(
           userName: 'Jose francisco vasquez',
           height: 82,
           width: 150,
@@ -198,7 +181,7 @@ class __pipButtonState extends State<_pipButton> {
       setState(() {
         _isShowingWindow = false;
       });
-      SystemAlertWindow.closeSystemWindow(prefMode: prefMode);
+      SystemAlertWindowAndroid.closeSystemWindow(prefMode: prefMode);
     }
   }
 
@@ -230,7 +213,8 @@ class __pipButtonState extends State<_pipButton> {
             children: [
               IconButton(
                 onPressed: () {
-                 // SystemAlertWindowIOS.showSystemWindow('Jose');
+                  final version = SystemAlertWindowFromIOS.getPlatformVersion();
+                  print(version);
                 },
                 icon: const Icon(
                   Icons.add,
@@ -238,7 +222,7 @@ class __pipButtonState extends State<_pipButton> {
               ),
               IconButton(
                 onPressed: () {
-                 // SystemAlertWindowIOS.closeSystemWindow();
+                  // SystemAlertWindowIOS.closeSystemWindow();
                 },
                 icon: const Icon(
                   Icons.remove,
