@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_application_1/isolated_manager.dart';
+import 'package:system_alert_window/system_alert_window.dart';
 
 void main() {
   runApp(MyApp());

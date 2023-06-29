@@ -123,14 +123,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.8.2"
-  plugin_platform_interface:
-    dependency: transitive
-    description:
-      name: plugin_platform_interface
-      sha256: "6a2128648c854906c53fa8e33986fc0247a1116122f9534dd20e3ab9e16a32bc"
-      url: "https://pub.dev"
-    source: hosted
-    version: "2.1.4"
   sky_engine:
     dependency: transitive
     description: flutter
@@ -168,6 +160,15 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.2.0"
+  system_alert_window:
+    dependency: "direct main"
+    description:
+      path: "."
+      ref: test
+      resolved-ref: bca7993a78c9d9f9327989f81723f2e9ea109879
+      url: "https://github.com/JoseFrancisco93/SystemAlertWindow"
+    source: git
+    version: "1.2.1"
   term_glyph:
     dependency: transitive
     description:
@@ -203,4 +204,4 @@ packages:
     version: "0.0.1"
 sdks:
   dart: ">=2.19.4 <3.0.0"
-  flutter: ">=2.5.0"
+  flutter: ">=2.0.0"
