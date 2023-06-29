@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_application_1/isolated_manager.dart';
 import 'package:system_alert_window/system_alert_window.dart';
-import 'package:system_window_overlay/system_window_overlay.dart';
 
 void main() {
   runApp(const MyApp());
@@ -182,7 +181,7 @@ class __pipButtonState extends State<_pipButton> {
 
   Future<void> _showOverlayWindow() async {
     if (!_isShowingWindow) {
-      SystemAlertWindow.showSystemWindowVEs(
+      SystemAlertWindow.showSystemWindowCopy25(
           userName: 'Jose francisco vasquez',
           height: 82,
           width: 150,
