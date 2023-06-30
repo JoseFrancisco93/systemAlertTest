@@ -37,9 +37,9 @@ dependencies:
   cupertino_icons: ^1.0.2
 
   system_alert_window:
-    git:
-      url: https://github.com/JoseFrancisco93/SystemAlertWindow
-      ref: test
+    path: C:\Users\pc\testSystemAlertWindow\SystemAlertWindow
+      # url: https://github.com/JoseFrancisco93/SystemAlertWindow
+      # ref: test
 
 dev_dependencies:
   flutter_test:

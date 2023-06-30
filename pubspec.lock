@@ -163,11 +163,9 @@ packages:
   system_alert_window:
     dependency: "direct main"
     description:
-      path: "."
-      ref: test
-      resolved-ref: aefe3894eda669dbb224303bc31d2f2818aa9563
-      url: "https://github.com/JoseFrancisco93/SystemAlertWindow"
-    source: git
+      path: "C:\\Users\\pc\\testSystemAlertWindow\\SystemAlertWindow"
+      relative: false
+    source: path
     version: "1.2.1"
   term_glyph:
     dependency: transitive
